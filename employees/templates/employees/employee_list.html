@@ -25,6 +25,7 @@ Employees
                 <th>Phone</th>
                 <th>Position</th>
                 <th>Salary</th>
+                <th>Actions</th>
             </tr>
         </thead>
 
@@ -38,6 +39,11 @@ Employees
                 <td>{{ employee.phone }}</td>
                 <td>{{ employee.position }}</td>
                 <td>{{ employee.salary }}</td>
+                <td>
+    <a href="{% url 'employee_update' employee.id %}" class="btn btn-warning btn-sm">
+        Edit
+    </a>
+</td>
             </tr>
 
             {% empty %}
