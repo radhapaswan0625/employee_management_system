@@ -38,8 +38,8 @@ def employee_update(request, id):
         "form": form
     })
 
-    def employee_delete(request, id):
-        employee = Employee.objects.get(id=id)
+def employee_delete(request, id):
+    employee = Employee.objects.get(id=id)
 
     if request.method == "POST":
         employee.delete()
