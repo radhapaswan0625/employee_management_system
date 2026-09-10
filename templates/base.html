@@ -36,27 +36,51 @@
 
                 <ul class="navbar-nav ms-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Employees</a>
-                    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/employees/">Employees</a>
+    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Departments</a>
-                    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Departments</a>
+    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Attendance</a>
-                    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Attendance</a>
+    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Payroll</a>
-                    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Payroll</a>
+    </li>
 
-                </ul>
+    {% if user.is_authenticated %}
+
+    <li class="nav-item">
+        <span class="nav-link text-warning">
+            Welcome, {{ user.username }}
+        </span>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link text-danger" href="{% url 'logout' %}">
+            Logout
+        </a>
+    </li>
+
+    {% else %}
+
+    <li class="nav-item">
+        <a class="nav-link text-success" href="{% url 'login' %}">
+            Login
+        </a>
+    </li>
+
+    {% endif %}
+
+</ul>
 
             </div>
 
